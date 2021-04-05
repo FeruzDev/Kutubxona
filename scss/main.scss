@@ -1,0 +1,654 @@
+/***************************** FONT FAMILY ****************************/
+
+
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url("../fonts/Open_Sans/OpenSans-Bold.ttf") format('truetype');
+}
+
+
+@font-face {
+  font-family: "OpenSans-Light";
+  src: url("../fonts/Open_Sans/OpenSans-Light.ttf") format('truetype');
+}
+
+
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url("../fonts/Open_Sans/OpenSans-Bold.ttf") format('truetype');
+}
+
+
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url("../fonts/Open_Sans/OpenSans-Regular.ttf") format('truetype');
+}
+
+
+@font-face {
+  font-family: "OpenSans-SemiBold";
+  src: url("../fonts/Open_Sans/OpenSans-SemiBold.ttf") format('truetype');
+}
+
+
+.font-family-bold {
+  font-family: "OpenSans-Bold", "OpenSans-Regular", sans-serif !important;
+}
+
+.font-family-regular {
+  font-family: "OpenSans-Regular", sans-serif !important;
+}
+
+.font-family-semi-bold {
+  font-family: "OpenSans-SemiBold", "OpenSans-Regular", sans-serif !important;
+}
+
+
+/***************************** COLORS STYLE ****************************/
+
+$color-grey: #f1f1f1;
+$color-icons: #949494;
+$color-silver: #858585;
+$color-button: #5A077D;
+$color-green: #45D881;
+
+
+/***************************** MIXINS STYLE ****************************/
+
+@mixin mask-image($url) {
+  mask-image: url($url);
+  -webkit-mask-image: url($url);
+}
+
+
+/***************************** ICONS STYLE ****************************/
+
+.icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: sub;
+  mask: {
+    repeat: no-repeat;
+    size: 100%;
+    position: center;
+  }
+
+
+  -webkit-mask: {
+    repeat: no-repeat;
+    size: 100%;
+    position: center;
+  }
+
+  background-color: $color-icons;
+
+  &.icon-search {
+    @include mask-image("../images/icons/search.svg");
+  }
+
+  &.icon-heart {
+    @include mask-image("../images/icons/heart.svg");
+  }
+
+
+  &.icon-play {
+    @include mask-image("../images/icons/media-play-symbol.svg")
+  }
+
+  &.icon-basket {
+    @include mask-image("../images/icons/shopping-cart.svg");
+  }
+
+
+  &.icon-eye {
+    @include mask-image("../images/icons/eye.svg");
+  }
+
+
+  &.icon-download {
+    @include mask-image("../images/icons/download.svg");
+  }
+
+
+  &.icon-email {
+    @include mask-image("../images/icons/mail.svg");
+  }
+
+
+  &.icon-phone {
+    @include mask-image("../images/icons/phone.svg");
+  }
+
+
+  &.icon-location {
+    @include mask-image("../images/icons/map-in.svg");
+  }
+
+  &.icon-white {
+    background-color: #ffffff;
+  }
+
+
+  &.icon-green {
+    background-color: $color-green;
+  }
+
+  &.icon-violet {
+    background-color: $color-button;
+
+  }
+
+  &.icon-sm {
+    width: 15px;
+    height: 15px;
+  }
+
+}
+
+
+/********************* MAIN STYLE ***********************/
+.type-pay {
+  color: $color-button
+}
+
+.type-free {
+  color: $color-green
+}
+
+
+body {
+  background-color: $color-grey;
+
+
+  nav.navbar {
+
+    .navbar-brand {
+
+      h4 {
+        font-size: 18px;
+        margin-top: 8px;
+      }
+
+      p {
+        font-size: 14px;
+        margin-top: 3px;
+      }
+    }
+
+    .input-group {
+      width: 40%;
+      margin-left: 7rem;
+
+      input, button {
+        background-color: $color-grey;
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+    }
+
+  }
+
+
+  header {
+    .carousel {
+      .carousel-indicators {
+        li {
+          height: 17px;
+          width: 17px;
+          background-color: transparent;
+          border-radius: 50%;
+          border: 2px solid #fff;
+
+          &.active {
+            background-color: #ffffff;
+          }
+
+        }
+      }
+
+      .carousel-sloy {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(90, 7, 125, 0.5);
+
+        h3 {
+          width: 440px;
+          margin-top: 6rem;
+          margin-right: 6rem;
+        }
+      }
+    }
+  }
+
+      main {
+    section {
+      &#videos {
+        h3 {
+          font-size: 22px;
+        }
+
+        .nav {
+          .nav-item {
+            .nav-link {
+              color: $color-silver;
+
+              &:after {
+                content: '';
+                margin-top: 5px;
+                height: 2px;
+                background-color: $color-button;
+                display: block;
+                transform: scaleX(0);
+                transition-duration: 0.5s;
+              }
+
+              &:hover {
+                &:after {
+                  transform: scaleX(1) translateY(5px);
+                }
+              }
+            }
+          }
+        }
+
+        a.position-absolute {
+          right: 10px;
+          top: 10px;
+        }
+
+        .d-flex {
+          font-size: 13px;
+          color: $color-icons;
+
+          .line {
+            height: 10px;
+            width: 1px;
+            margin-top: 6px;
+            margin-left: 10px;
+            background-color: $color-icons;
+
+          }
+        }
+      }
+
+      &#free-audio {
+        h3 {
+          font-size: 22px;
+        }
+
+        .btn.yana-qoshish{
+          background-color: $color-button;
+          margin:  50px auto;
+          display: block;
+        }
+        .container {
+          .row {
+            .col-md-6 {
+              .card {
+
+                p {
+                  font-size: 14px;
+                  color: $color-silver;
+                }
+
+                .col-md-8 {
+                  padding-right: 2rem;
+                }
+
+                .progress {
+                  height: 8px;
+                  background-color: white;
+                  border: 1px solid $color-grey;
+                  overflow: unset;
+
+                  .progress-bar {
+                    background-color: #9D69b1;
+                  }
+
+                  .btn {
+                    background-color: $color-button;
+                    width: 50px;
+                    height: 50px;
+                    position: absolute;
+                    top: -21.5px;
+                    left: 0;
+                  }
+                }
+
+                a.position-absolute {
+                  top: 10px;
+                  right: 25px;
+                }
+
+                .d-flex {
+                  color: $color-silver;
+                  font-size: 13px;
+                  margin-top: 4rem;
+
+                  .btn {
+                    background-color: $color-button;
+                    border-radius: 10px;
+                    padding: 5px 20px;
+                    font-size: 13px;
+                    margin-top: -5px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+      }
+
+      &#audio-kitoblar{
+
+        .btn.yana-qoshish{
+          background-color: $color-button;
+          margin:  50px auto;
+          display: block;
+        }
+
+        .nav{
+          .nav-item{
+            .nav-link{
+              color: $color-silver;
+
+
+              &:after {
+                content: '';
+                margin-top: 5px;
+                height: 2px;
+                background-color: $color-button;
+                display: block;
+                transform: scaleX(0);
+                transition-duration: 0.5s;
+              }
+
+              &:hover {
+                &:after {
+                  transform: scaleX(1) translateY(5px);
+                }
+              }
+
+            }
+          }
+        }
+        .container{
+
+          .row{
+            .col{
+              .card{
+
+                .sloy-audio-kitoblar{
+
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  right: 0;
+                  bottom: 0;
+                  background-color: rgba(255, 255, 255, 0.6);
+                  opacity: 0;
+                  padding: 0 0;
+                  box-sizing: border-box;
+                  padding-top: 130px;
+                  padding-left: 60px;
+                  transition-duration: 0.5s;
+                  &:hover{
+                    opacity: 1;
+
+                 }
+                  .btn{
+                    .icon-heart{
+                      background-color: $color-button;
+                    }
+                    .icon-basket{
+                      background-color: $color-green;
+                    }
+                  }
+                }
+                overflow: hidden;
+
+                .pullik{
+                  background-color: white;
+                  width: 100px;
+                  height: 22px;
+                  transform: rotate(45deg);
+                  position: absolute;
+                  right: -30px;
+                  top: 10px;
+                  p{
+                    color: $color-button;
+                    align-items: center;
+                    font-size: 14px;
+                  }
+
+                  h6{
+                    font-size: 12px;
+                  }
+                }
+                .bepul{
+                  background-color: white;
+                  width: 100px;
+                  height: 22px;
+                  transform: rotate(45deg);
+                  position: absolute;
+                  right: -30px;
+                  top: 10px;
+                  p{
+                    color: $color-green;
+                    align-items: center;
+                    font-size: 14px;
+                  }
+                }
+
+                .d-flex{
+                  font-size: 12px;
+                }
+
+              }
+            }
+          }
+        }
+      }
+
+      &#janrlar{
+        h3{
+
+        }
+        .container{
+          .row{
+            .col-md-4{
+              .card{
+                border: 0;
+                a{
+                  color: $color-silver;
+                  font-size: 20px;
+                  padding-top: 5px;
+                  margin-left: 100px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &#materials{
+        background-image: url("../images/images/bg_1.png");
+        background-size: 100%;
+        padding-top: 160px;
+        padding-bottom: 140px;
+        .container{
+          .row{
+             .row{
+               .col-4{
+
+
+               }
+               .col-8{
+
+                 h3{
+                   font-size: 24px;
+                 }
+                 p{
+
+                   color: white;
+                 }
+               }
+             }
+
+          }
+        }
+      }
+
+    }
+  }
+
+  footer{
+    background-image: url("../images/images/footer_bg.png");
+    background-size: 100%;
+
+    .container{
+
+      .row{
+        .col-md-4{
+          color: white;
+          .row{
+            .col-5{
+
+
+            }
+            .col-7{
+              h4{
+                font-size: 14px;
+              }
+              p{
+
+                font-size: 12px;
+              }
+
+
+            }
+          }
+
+          ul{
+            li{
+              margin-bottom: 5px;
+              margin-left: 100px;
+
+              a{
+                color: white;
+
+              }
+            }
+          }
+          .nav{
+            li{
+
+              a{
+                padding-left: 10px;
+              }
+              p{
+                padding-left: 20px;
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+
+/************************************************MEDIA STYLE*****************************************/
+
+
+@media (max-width: 576px) {
+  body {
+    nav.navbar {
+      .navbar-brand {
+        margin-right: 0;
+
+        h4 {
+          font-size: 16px;
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+
+      .input-group {
+        width: 100%;
+        margin-left: 0;
+      }
+
+    }
+
+    header {
+      .carousel {
+        .carousel-inner {
+          .carousel-item {
+            &:after {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 0;
+              bottom: 0;
+              right: 0;
+              background-color: rgba(90, 7, 125, 0.5);
+            }
+
+            .carousel-sloy {
+              position: relative;
+              z-index: 3;
+
+              h3 {
+                margin: 0 0 3rem 1rem;
+                font-size: 23px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    main {
+      section {
+        &#free-audio {
+          .container {
+            .row {
+              .col-md-6 {
+                .card {
+
+                  .col-md-8 {
+                    .d-flex {
+                      div.ml-0.ml-md-auto {
+                        width: 100%;
+
+                        .btn {
+                          margin-top: 1rem;
+                          width: 100%;
+                        }
+                      }
+
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
